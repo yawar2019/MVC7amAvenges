@@ -54,7 +54,7 @@ namespace MVC7amAvenges.Controllers
             return View();
         }
 
-        public ActionResult sendinfo3()
+        public ViewResult sendinfo3()
         {
             EmployeeModel obj = new Models.EmployeeModel();
             obj.EmpId = 1;
@@ -75,7 +75,7 @@ namespace MVC7amAvenges.Controllers
 
             return View();
         }
-        public ActionResult sendinfo4()
+        public ViewResult sendinfo4()
         {
             EmployeeModel obj = new Models.EmployeeModel();
             obj.EmpId = 1;
@@ -110,10 +110,21 @@ namespace MVC7amAvenges.Controllers
             empList.Add(obj1);
             empList.Add(obj3);
 
-           
-
-
             return View(empList);
+        }
+
+        public ViewResult sendinfo6()
+        {
+            return View();
+        }
+
+        public FileResult getmefile()
+        {
+            return File("~/Web.config","application/pdf");
+        }
+        public FileResult getmefile2()
+        {
+            return File("~/ActionResult.pdf", "application/pdf","Pokeman");
         }
     }
 }
