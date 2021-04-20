@@ -127,5 +127,31 @@ namespace MVC7amAvenges.Controllers
             return File("~/ActionResult.pdf", "application/pdf","Pokeman");
         }
         //thanks Pradeep for showing demo
+
+        public JsonResult getmejson() {
+
+            EmployeeModel obj = new Models.EmployeeModel();
+            obj.EmpId = 1;
+            obj.EmpName = "Prathyusha";
+            obj.EmpSalary = 89493;
+
+            EmployeeModel obj1 = new Models.EmployeeModel();
+            obj1.EmpId = 2;
+            obj1.EmpName = "Neerja";
+            obj1.EmpSalary = 79493;
+
+            EmployeeModel obj3 = new Models.EmployeeModel();
+            obj3.EmpId = 3;
+            obj3.EmpName = "sai";
+            obj3.EmpSalary = 59493;
+
+
+            List<EmployeeModel> empList = new List<EmployeeModel>();
+            empList.Add(obj);
+            empList.Add(obj1);
+            empList.Add(obj3);
+
+            return Json(empList, JsonRequestBehavior.AllowGet);
+        }
     }
 }
