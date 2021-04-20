@@ -126,5 +126,6 @@ namespace MVC7amAvenges.Controllers
         {
             return File("~/ActionResult.pdf", "application/pdf","Pokeman");
         }
+        //thanks Pradeep for showing demo
     }
 }
