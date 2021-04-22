@@ -31,7 +31,10 @@ namespace MVC7amAvenges.Controllers
         {
             return Content("<p style='color:red'>Welcome to My Den</p>");
         }
-
+        public ContentResult getmeTahnos4()
+        {
+            return Content("<script>alert('welcome to world')</script>");
+        }
         public string getMeId(int? id)
         {
             return "My Employee Id is "+id;
@@ -204,5 +207,30 @@ namespace MVC7amAvenges.Controllers
             empList.Add(obj3);
             return PartialView("_MyPartialView", empList);
         }
+
+        public RedirectResult GoToGoogle(int? id) {
+            return Redirect("http://www.google.com");
+        }
+
+        public RedirectResult GoToGoogle2()
+        {
+            return Redirect("~/New/GoToGoogle?id=1");
+        }
+
+        public RedirectToRouteResult getmeRoute()
+        {
+
+            return RedirectToRoute("Default1");
+        }
+        public RedirectToRouteResult getmeRoute2()
+        {
+            EmployeeModel obj3 = new Models.EmployeeModel();
+            obj3.EmpId = 3;
+            obj3.EmpName = "sai";
+            obj3.EmpSalary = 59493;
+
+            return RedirectToAction("Index","Default", obj3);
+        }
+
     }
 }
