@@ -15,5 +15,70 @@ namespace AdoNetExample.Controllers
         {
             return View(db.getEmployees());
         }
+        [HttpGet]
+        public ActionResult Create() {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(EmployeeModel emp)
+        {
+           int i = db.saveEmployees(emp);
+            if (i > 0)
+            {
+                return Redirect("Index");
+            }
+            else
+            {
+                return View();
+            }
+           
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int ? id)
+        {
+            EmployeeModel emp= db.getEmployeesById(id);
+
+            return View(emp);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(EmployeeModel emp)
+        {
+            int i = db.UpdateEmployees(emp);
+            if (i > 0)
+            {
+                return Redirect("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            EmployeeModel emp = db.getEmployeesById(id);
+            return View(emp);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            int i = db.DeleteEmployee(id);
+            if (i > 0)
+            {
+                // return Redirect("~/Default/Index");
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }
