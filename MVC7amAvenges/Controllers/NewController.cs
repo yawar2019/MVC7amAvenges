@@ -232,5 +232,18 @@ namespace MVC7amAvenges.Controllers
             return RedirectToAction("Index","Default", obj3);
         }
 
+        public ActionResult HtmlHelperExample()
+        {
+            Employee db = new Employee();
+
+            ViewBag.ShowEmployees = new SelectList(db.getEmployees(), "EmpId", "EmpName", 35035);
+
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpName = "jai";
+
+
+            return View(emp);
+        }
+
     }
 }

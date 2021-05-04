@@ -1,0 +1,34 @@
+﻿@model MVC7amAvenges.Models.EmployeeModel
+@{
+    ViewBag.Title = "HtmlHelperExample";
+}
+
+<h2>HtmlHelperExample</h2>
+<script>
+    function fun() {
+        alert('hello world');
+    }
+</script>
+
+@*html helpers is c# methods which is used to create Html Control*@
+
+@Html.TextBox("FirstName","RCB",new { style = "background-color:yellow;color:red",id="txtfirstname" ,@class="form-control", onclick = "fun()" })
+<input type="text" name="LastName" value="CSK" style="background-color:yellow;color:red" class="form-control" onclick="fun()"  />
+@Html.TextBoxFor(s=>s.EmpName)
+
+@Html.LabelFor(x=>x.EmpName)<br />
+
+@Html.Password("pwd","nareshit@123",new {style= "background-color:yellow;" })<br />
+<span>Java</span>@Html.CheckBox("java")
+<span>Dotnet</span>@Html.CheckBox("Dotnet",true)<br />
+<span>Male</span>@Html.RadioButton("Gender", "Male") <span>Female</span>@Html.RadioButton("Gender", "FeMale") <span>Other</span>@Html.RadioButton("Gender", "Other")
+<br />
+@Html.DropDownList("Country",new List<SelectListItem> {
+
+new SelectListItem {Text="India",Value="India"},
+new SelectListItem {Text="China",Value="China"},
+new SelectListItem {Text="Russia",Value="Russia"}
+},"Select Country")
+
+@Html.DropDownList("ShowEmployees")
+
