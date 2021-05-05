@@ -1,4 +1,7 @@
-﻿@model MVC7amAvenges.Models.EmployeeModel
+﻿@using MVC7amAvenges.Controls;
+
+@model MVC7amAvenges.Models.EmployeeModel
+
 @{
     ViewBag.Title = "HtmlHelperExample";
 }
@@ -32,3 +35,20 @@ new SelectListItem {Text="Russia",Value="Russia"}
 
 @Html.DropDownList("ShowEmployees")
 
+@Html.DropDownList("Enployees",(IEnumerable<SelectListItem>)ViewBag.ShowEmployees)<br />
+
+@Html.TextArea("address","hyd",12,15,null)
+
+@MVC7amAvenges.Controls.myControl.MyLabel("Employee Salary")<br />
+@Html.createUrControl("text","background-color:yellow")<br />
+@Html.createUrControl("checkbox", "background-color:yellow")<br />
+@Html.createUrControl("radio",null)<br />
+@Html.createUrControl("file",null)<br />
+
+
+
+@helper labelbyrazzorcode(string content)
+{
+    <label>@content</label>
+}
+@labelbyrazzorcode("hi this is ali")
