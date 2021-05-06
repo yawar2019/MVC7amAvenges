@@ -245,5 +245,16 @@ namespace MVC7amAvenges.Controllers
             return View(emp);
         }
 
+        public ActionResult ValidationExample()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ValidationExample(RegisterModel r)
+        {
+
+            return View();
+        }
     }
 }
