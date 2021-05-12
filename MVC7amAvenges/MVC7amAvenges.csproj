@@ -150,6 +150,7 @@
     </Compile>
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="MyFilter\CustomFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +176,7 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\New\HtmlHelperExample.cshtml" />
     <Content Include="Views\New\ValidationExample.cshtml" />
+    <Content Include="Views\New\Player.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

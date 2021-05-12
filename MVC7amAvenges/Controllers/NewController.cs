@@ -1,4 +1,5 @@
 ﻿using MVC7amAvenges.Models;
+using MVC7amAvenges.MyFilter;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace MVC7amAvenges.Controllers
 {
+ 
     public class NewController : Controller
     {
         // GET: New
@@ -45,7 +47,7 @@ namespace MVC7amAvenges.Controllers
             ViewBag.info ="crona";
             return View();
         }
-
+        
         public ActionResult sendinfo2()
         {
             EmployeeModel obj = new Models.EmployeeModel();
@@ -244,16 +246,29 @@ namespace MVC7amAvenges.Controllers
 
             return View(emp);
         }
-
+        
+        [CustomFilter]
         public ActionResult ValidationExample()
         {
-
+            
             return View();
         }
         [HttpPost]
         public ActionResult ValidationExample(RegisterModel r)
         {
-
+            if (ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [CustomFilter]
+        public ActionResult Player()
+        {
+            ViewBag.favoriteplayer ="Brain Lara";
             return View();
         }
     }
