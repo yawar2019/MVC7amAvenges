@@ -80,5 +80,16 @@ namespace AdoNetExample.Controllers
                 return View();
             }
         }
+        public ActionResult getMyService()
+        {
+            ServiceReference1.MyWebServiceSoapClient obj = new ServiceReference1.MyWebServiceSoapClient();
+           ViewBag.Add= obj.Add(5,10);
+            ServiceReference2.MyWcfService1Client obj1 = new ServiceReference2.MyWcfService1Client();
+            ViewBag.Add2 = obj.Add(5, 10);
+            return View();
+
+        }
+
+       
     }
 }

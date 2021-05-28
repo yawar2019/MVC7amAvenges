@@ -14,5 +14,11 @@ namespace MVC7amAvenges.Controllers
         {
             return View();
         }
+
+        [OutputCache(Duration =20,Location =System.Web.UI.OutputCacheLocation.Client)]
+        public ActionResult getMeData()
+        {
+            return View();
+        }
     }
 }
